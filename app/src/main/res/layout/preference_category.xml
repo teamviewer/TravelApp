@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ ~ Copyright 2019 TeamViewer (www.teamviewer.com).  All rights reserved.
+ ~
+ ~ Please refer to the end user license agreement (EULA), the app developer agreement
+ ~ and license information associated with this source code for terms and conditions
+ ~ that govern your use of this software.
+ -->
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+          style="?android:attr/listSeparatorTextViewStyle"
+          android:id="@android:id/title"
+          android:textIsSelectable="false"
+          android:paddingTop="@dimen/preference_category_padding_top"
+          android:paddingStart="@dimen/preference_category_padding_side"
+          android:paddingEnd="@dimen/preference_category_padding_side"/>

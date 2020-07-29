@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ ~ Copyright 2019 TeamViewer (www.teamviewer.com).  All rights reserved.
+ ~
+ ~ Please refer to the end user license agreement (EULA), the app developer agreement
+ ~ and license information associated with this source code for terms and conditions
+ ~ that govern your use of this software.
+ -->
+
+<resources>
+    <color name="app_color">#FF5BB6F7</color>
+    <color name="app_color_disabled">#4D5BB6F7</color>
+</resources>

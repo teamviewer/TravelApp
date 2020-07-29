@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ ~ Copyright 2019 TeamViewer (www.teamviewer.com).  All rights reserved.
+ ~
+ ~ Please refer to the end user license agreement (EULA), the app developer agreement
+ ~ and license information associated with this source code for terms and conditions
+ ~ that govern your use of this software.
+ -->
+
+<resources>
+    <string name="app_name">Travel</string>
+    <string name="help">Help</string>
+    <string name="summer_holiday">Summer holiday</string>
+
+    <string name="teamviewersdk_authentication_title">Incoming Connection</string>
+    <string name="teamviewersdk_authentication_message">%s wants to connect to your device</string>
+    <string name="teamviewersdk_authentication_positive">Accept</string>
+    <string name="teamviewersdk_authentication_negative">Deny</string>
+
+    <string name="teamviewersdk_session_title">Screen sharing active</string>
+    <string name="teamviewersdk_session_stop">Stop</string>
+
+    <string name="teamviewersdk_enter_session_code_title">Please enter the session code you received</string>
+    <string name="teamviewersdk_enter_session_code_title_wait">Please wait until session starts</string>
+    <string name="teamviewersdk_session_code_static_s">s</string>
+    <string name="teamviewersdk_authentication_connect">Connect</string>
+    <string name="teamviewersdk_authentication_cancel">Cancel</string>
+    
+    <!-- Planning settings -->
+    <string name="pref_header_planning">Planning</string>
+    <string name="pref_title_trip">Trip</string>
+    <string name="pref_title_destination">Destination</string>
+    <string-array name="pref_destination_titles">
+        <item>Berlin</item>
+        <item>Sydney</item>
+        <item>Vancouver</item>
+        <item>Tokyo</item>
+        <item>New York</item>
+        <item>Rio de Janeiro</item>
+        <item>Cape Town</item>
+        <item>Mumbai</item>
+        <item>Moscow</item>
+        <item>Hong Kong</item>
+        <item>Shanghai</item>
+        <item>London</item>
+        <item>Mexico City</item>
+        <item>Seoul</item>
+        <item>Paris</item>
+    </string-array>
+    <string-array name="pref_destination_values">
+        <item>Berlin</item>
+        <item>Sydney</item>
+        <item>Vancouver</item>
+        <item>Tokyo</item>
+        <item>New York</item>
+        <item>Rio de Janeiro</item>
+        <item>Cape Town</item>
+        <item>Mumbai</item>
+        <item>Moscow</item>
+        <item>Hong Kong</item>
+        <item>Shanghai</item>
+        <item>London</item>
+        <item>Mexico City</item>
+        <item>Seoul</item>
+        <item>Paris</item>
+    </string-array>
+    <string name="pref_title_temperature">Temperature</string>
+    <string name="pref_value_temperature_c">31°C</string>
+    <string name="pref_value_temperature_f">88°F</string>
+
+    <!-- Checklist settings -->
+    <string name="pref_header_checklist">Checklist</string>
+    <string name="pref_title_passport">Passport</string>
+    <string name="pref_title_ticket">Ticket</string>
+    <string name="pref_title_credit_card">Credit Card</string>
+    <string name="pref_title_digital_camera">Digital camera</string>
+</resources>

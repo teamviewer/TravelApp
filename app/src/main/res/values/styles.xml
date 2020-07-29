@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ ~ Copyright 2019 TeamViewer (www.teamviewer.com).  All rights reserved.
+ ~
+ ~ Please refer to the end user license agreement (EULA), the app developer agreement
+ ~ and license information associated with this source code for terms and conditions
+ ~ that govern your use of this software.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="TravelAppTheme" parent="Theme.AppCompat">
+        <item name="android:colorAccent">@color/app_color</item>
+        <item name="colorControlActivated">@color/app_color</item>
+    </style>
+</resources>

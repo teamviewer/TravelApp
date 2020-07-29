@@ -1,0 +1,66 @@
+<!--
+ ~ Copyright 2019 TeamViewer (www.teamviewer.com).  All rights reserved.
+ ~
+ ~ Please refer to the end user license agreement (EULA), the app developer agreement
+ ~ and license information associated with this source code for terms and conditions
+ ~ that govern your use of this software.
+ -->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+            android:layout="@layout/preference_category"
+            android:title="@string/pref_header_planning">
+        <EditTextPreference
+                android:capitalize="words"
+                android:defaultValue="@string/summer_holiday"
+                android:icon="@drawable/suitcase"
+                android:inputType="textCapWords"
+                android:key="planning_trip"
+                android:maxLines="1"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:title="@string/pref_title_trip"/>
+
+        <ListPreference
+                android:defaultValue="-1"
+                android:entries="@array/pref_destination_titles"
+                android:entryValues="@array/pref_destination_values"
+                android:icon="@drawable/map"
+                android:key="planning_destination"
+                android:negativeButtonText="@null"
+                android:positiveButtonText="@null"
+                android:title="@string/pref_title_destination"/>
+
+        <com.teamviewer.example.travel.ui.TogglePreference
+                android:defaultValue="true"
+                android:icon="@drawable/thermometer"
+                android:key="planning_temperature"
+                android:summaryOff="@string/pref_value_temperature_f"
+                android:summaryOn="@string/pref_value_temperature_c"
+                android:title="@string/pref_title_temperature"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+            android:layout="@layout/preference_category"
+            android:title="@string/pref_header_checklist">
+        <CheckBoxPreference
+                android:defaultValue="false"
+                android:icon="@drawable/passport"
+                android:key="checklist_passport"
+                android:title="@string/pref_title_passport"/>
+        <CheckBoxPreference
+                android:defaultValue="false"
+                android:icon="@drawable/ticket"
+                android:key="checklist_ticket"
+                android:title="@string/pref_title_ticket"/>
+        <CheckBoxPreference
+                android:defaultValue="false"
+                android:icon="@drawable/creditcard"
+                android:key="checklist_credit_card"
+                android:title="@string/pref_title_credit_card"/>
+        <CheckBoxPreference
+                android:defaultValue="false"
+                android:icon="@drawable/camera"
+                android:key="checklist_digital_camera"
+                android:title="@string/pref_title_digital_camera"/>
+    </PreferenceCategory>
+</PreferenceScreen>
