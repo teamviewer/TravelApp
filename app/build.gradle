@@ -17,7 +17,19 @@ android {
 }
 
 dependencies {
+    // Add both TeamViewerSdk and PilotSessionUI AAR files:
     implementation fileTree(include: 'TeamViewerSdk.aar', dir: 'libs')
+    implementation fileTree(include: 'PilotSessionUI.aar', dir: 'libs')
+
+    // Add dependencies of PilotSessionUI.aar:
+    runtimeOnly "androidx.camera:camera-camera2:1.0.0-beta12"
+    runtimeOnly "androidx.camera:camera-lifecycle:1.0.0-beta12"
+    runtimeOnly "androidx.constraintlayout:constraintlayout:2.0.4"
+    runtimeOnly "androidx.fragment:fragment-ktx:1.2.3"
+    runtimeOnly "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+    runtimeOnly "com.google.android.material:material:1.1.0"
+    runtimeOnly "de.javagl:obj:0.3.0"
+    runtimeOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.10"
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.fragment:fragment:1.2.5'

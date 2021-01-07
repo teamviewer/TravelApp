@@ -71,7 +71,7 @@ public final class ScreenSharingWrapper {
                     Log.e("TeamViewerSdk", "Error: " + errorCode);
                     Toast.makeText(context, errorCode.toString(), Toast.LENGTH_SHORT).show();
                 })
-                .withSessionCallback(new SessionCallbackImpl(inputCallback))
+                .withSessionCallback(new SessionCallbackImpl(context, inputCallback))
                 .withAuthenticationCallback(new AuthenticationCallbackImpl(context))
                 .withSettings(m_settings)
                 .withAccessControlCallback(new AccessControlCallbackImpl(context))
