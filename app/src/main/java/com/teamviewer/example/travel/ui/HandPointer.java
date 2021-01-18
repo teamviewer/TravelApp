@@ -12,25 +12,21 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.PixelFormat;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.Gravity;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.teamviewer.example.travel.R;
 
-public class HandPointer
-{
+public class HandPointer {
     private boolean m_addedToView;
     private final ImageView m_image;
     private final WindowManager.LayoutParams m_layoutParams;
-    private Context m_context;
+    private final Context m_context;
     private double m_xShift;
     private double m_yShift;
 
-    public HandPointer(Context context)
-    {
+    public HandPointer(Context context) {
         m_context = context;
         m_image = new ImageView(m_context);
         m_image.setImageResource(R.drawable.tv_show_marker);
@@ -39,101 +35,74 @@ public class HandPointer
                 WindowManager.LayoutParams.WRAP_CONTENT,
                 WindowManager.LayoutParams.WRAP_CONTENT,
                 WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
-         WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE |
-                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE |
-                WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
+                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE |
+                        WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE |
+                        WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
                 PixelFormat.TRANSPARENT);
 
-        m_layoutParams.gravity = Gravity.LEFT|Gravity.TOP;
+        m_layoutParams.gravity = Gravity.START | Gravity.TOP;
     }
 
-    public void show(int x, int y)
-    {
+    public void show(int x, int y) {
         m_layoutParams.x = (int) (x - m_xShift);
         m_layoutParams.y = (int) (y - m_yShift);
 
         WindowManager windowManager = (WindowManager) m_context.getSystemService(Context.WINDOW_SERVICE);
 
-        if (windowManager != null && !m_addedToView)
-        {
-            new Handler(Looper.getMainLooper()).post(() ->
-            {
-                if (!m_addedToView)
-                {
-                    windowManager.addView(m_image, m_layoutParams);
-                    m_addedToView = true;
-                }
-
-            });
-        }
-        else if (m_addedToView)
-        {
+        if (windowManager != null && !m_addedToView) {
+            if (!m_addedToView) {
+                windowManager.addView(m_image, m_layoutParams);
+                m_addedToView = true;
+            }
+        } else if (m_addedToView) {
             updatePosition();
         }
     }
 
-    private void updatePosition()
-    {
+    private void updatePosition() {
         WindowManager windowManager = (WindowManager) m_context.getSystemService(Context.WINDOW_SERVICE);
 
-        if (windowManager != null )
-        {
-            new Handler(Looper.getMainLooper()).post(
-                    () -> windowManager.updateViewLayout(m_image, m_layoutParams)
-            );
+        if (windowManager != null) {
+            windowManager.updateViewLayout(m_image, m_layoutParams);
         }
     }
 
-    public void buttonClicked(int x, int y)
-    {
+    public void buttonClicked(int x, int y) {
         float scale = 0.75f;
-        new Handler(Looper.getMainLooper()).post(
-                () ->
-                {
-                    ObjectAnimator xScale = ObjectAnimator.ofFloat(m_image, "scaleX", scale);
-                    ObjectAnimator yScale = ObjectAnimator.ofFloat(m_image, "scaleY", scale);
-                    xScale.setDuration(1);
-                    yScale.setDuration(1);
+        ObjectAnimator xScale = ObjectAnimator.ofFloat(m_image, "scaleX", scale);
+        ObjectAnimator yScale = ObjectAnimator.ofFloat(m_image, "scaleY", scale);
+        xScale.setDuration(1);
+        yScale.setDuration(1);
 
-
-                    AnimatorSet animatorSet = new AnimatorSet();
-                    animatorSet.play(xScale).with(yScale);
-                    animatorSet.start();
-                });
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.play(xScale).with(yScale);
+        animatorSet.start();
 
         updateShift(scale);
         show(x, y);
     }
 
-    public void buttonReleased(int x, int y)
-    {
+    public void buttonReleased(int x, int y) {
         float scale = 1.0f;
-        new Handler(Looper.getMainLooper()).post(
-                () ->
-                {
-                    ObjectAnimator xScale = ObjectAnimator.ofFloat(m_image, "scaleX", scale);
-                    ObjectAnimator yScale = ObjectAnimator.ofFloat(m_image, "scaleY", scale);
+        ObjectAnimator xScale = ObjectAnimator.ofFloat(m_image, "scaleX", scale);
+        ObjectAnimator yScale = ObjectAnimator.ofFloat(m_image, "scaleY", scale);
 
-                    AnimatorSet animatorSet = new AnimatorSet();
-                    animatorSet.play(xScale).with(yScale);
-                    animatorSet.start();
-                });
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.play(xScale).with(yScale);
+        animatorSet.start();
 
         updateShift(scale);
         show(x, y);
     }
 
-    public void removePointer()
-    {
+    public void removePointer() {
         WindowManager windowManager = (WindowManager) m_context.getSystemService(Context.WINDOW_SERVICE);
-        if (windowManager != null)
-        {
+        if (windowManager != null) {
             windowManager.removeViewImmediate(m_image);
         }
     }
 
-    public void updateShift(float scale)
-    {
+    public void updateShift(float scale) {
         float shiftingFactor = (1 - scale) / 2;
         m_xShift = m_image.getWidth() * shiftingFactor;
         m_yShift = m_image.getHeight() * shiftingFactor;
