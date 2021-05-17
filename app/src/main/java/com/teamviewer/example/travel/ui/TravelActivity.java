@@ -8,31 +8,52 @@
 
 package com.teamviewer.example.travel.ui;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.ActivityNotFoundException;
+import android.content.ClipData;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.teamviewer.example.travel.R;
 import com.teamviewer.example.travel.ScreenSharingWrapper;
 
+import java.io.File;
+
 public class TravelActivity extends AppCompatActivity implements ScreenSharingWrapper.RunningStateListener {
 
     private static final String TAG = "TravelActivity";
+    private static final int REQUEST_CODE_RECORD_AUDIO_PERMISSIONS = 1;
+    private static final int REQUEST_CODE_CAMERA_PERMISSIONS = 2;
 
-    private MenuItem m_menuItem;
+    private static final int REQUEST_CODE_PICK_FILE = 201;
+    private static final int REQUEST_CODE_TAKE_PICTURE = 202;
+    private Uri m_pendingPictureUri;
+
+    private MenuItem m_menuItemHelp;
+    private MenuItem m_menuItemShare;
     private AlertDialog m_sessionCodeDialog;
+    private Snackbar m_snackbar = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +68,10 @@ public class TravelActivity extends AppCompatActivity implements ScreenSharingWr
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.travel_activity_actions, menu);
 
-        m_menuItem = menu.findItem(R.id.help);
-        updateMenuItemState(m_menuItem);
+        m_menuItemHelp = menu.findItem(R.id.help);
+        m_menuItemShare = menu.findItem(R.id.share);
+
+        updateMenuItemState();
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -77,21 +100,132 @@ public class TravelActivity extends AppCompatActivity implements ScreenSharingWr
                 m_sessionCodeDialog = new SessionCodeInputDialog(this).getInstance();
                 m_sessionCodeDialog.show();
                 return true;
+            case R.id.share:
+                showChooseFileDialog();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
-    private Snackbar m_snackbar = null;
+    private void showChooseFileDialog() {
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.select_dialog_item);
+        adapter.addAll(getResources().getStringArray(R.array.share_from));
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.choose_file_title)
+                .setSingleChoiceItems(adapter, 0, (dialog, which) -> {
+                    if (which == 0) {
+                        //If you don't use PilotSessionUI you don't need to check Manifest.permission.CAMERA
+                        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+                            openCamera();
+                        } else {
+                            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, REQUEST_CODE_CAMERA_PERMISSIONS);
+                        }
+                    } else {
+                        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+                        intent.setType("*/*");
+                        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+                        try {
+                            startActivityForResult(intent, REQUEST_CODE_PICK_FILE);
+                        } catch (ActivityNotFoundException ignored) {
+                        }
+                    }
+                    dialog.dismiss();
+                })
+                .show();
+    }
+
+    private void openCamera() {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        File storageFile = getStorageFile("picture_" + System.currentTimeMillis() + ".jpg");
+        if (storageFile != null) {
+            Uri photoUri = FileProvider.getUriForFile(this,
+                    "com.teamviewer.example.travel.fileprovider",
+                    storageFile);
+
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
+            m_pendingPictureUri = photoUri;
+
+            try {
+                startActivityForResult(intent, REQUEST_CODE_TAKE_PICTURE);
+            } catch (ActivityNotFoundException ignored) {
+            }
+        }
+    }
+
+    @Nullable
+    private File getStorageFile(@NonNull String name) {
+        File[] mediaDirs = getExternalMediaDirs();
+        if (mediaDirs != null && mediaDirs.length > 0) {
+            return new File(mediaDirs[0], name);
+        }
+        return null;
+    }
 
     @Override
-    public void onRunningStateChange(boolean isRunning) {
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == REQUEST_CODE_PICK_FILE) {
+                if (data != null) {
+                    if (data.getData() != null) {
+                        ScreenSharingWrapper.getInstance().shareFiles(data.getData());
+                    } else if (data.getClipData() != null) {
+                        final ClipData clipData = data.getClipData();
+                        final int count = clipData.getItemCount();
+                        final Uri[] files = new Uri[count];
+                        for (int i = 0; i < count; ++i) {
+                            files[i] = clipData.getItemAt(i).getUri();
+                        }
+                        ScreenSharingWrapper.getInstance().shareFiles(files);
+                    }
+                }
+            } else if (requestCode == REQUEST_CODE_TAKE_PICTURE) {
+                ScreenSharingWrapper.getInstance().shareFiles(m_pendingPictureUri);
+                m_pendingPictureUri = null;
+            }
+
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        if (requestCode == REQUEST_CODE_RECORD_AUDIO_PERMISSIONS) {
+            for (int i = 0; i < permissions.length; ++i) {
+                if (Manifest.permission.RECORD_AUDIO.equals(permissions[i]) &&
+                        grantResults[i] == PackageManager.PERMISSION_GRANTED) {
+                    ScreenSharingWrapper.getInstance().onMicrophonePermissionGranted();
+                }
+            }
+        }
+        if (requestCode == REQUEST_CODE_CAMERA_PERMISSIONS) {
+            for (int i = 0; i < permissions.length; ++i) {
+                if (Manifest.permission.CAMERA.equals(permissions[i]) &&
+                        grantResults[i] == PackageManager.PERMISSION_GRANTED) {
+                    openCamera();
+                }
+            }
+        }
+
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    @Override
+    public void onRunningStateChange(@NonNull SessionState sessionState) {
         // saving the state is not necessary and
         // missed events between #onPause() and #onResume()
         // are intercepted by querying the session state in
         // #updateMenuItemState(MenuItem)
         invalidateOptionsMenu();
-        updateSnackbar(isRunning);
+        updateSnackbar(sessionState != SessionState.NoSession);
+
+        //Request record audio permission if needed
+        if (sessionState == SessionState.ScreenSharing &&
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
+                ContextCompat.checkSelfPermission(TravelActivity.this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO}, REQUEST_CODE_RECORD_AUDIO_PERMISSIONS);
+        }
     }
 
     private void updateSnackbar(boolean isRunning) {
@@ -110,9 +244,7 @@ public class TravelActivity extends AppCompatActivity implements ScreenSharingWr
                 m_snackbar.dismiss();
             }
         }
-        if (m_menuItem != null) {
-            updateMenuItemState(m_menuItem);
-        }
+            updateMenuItemState();
     }
 
     private void setupCustomActionBar() {
@@ -129,9 +261,13 @@ public class TravelActivity extends AppCompatActivity implements ScreenSharingWr
                 .commit();
     }
 
-    private void updateMenuItemState(MenuItem menuItem) {
-        boolean buttonEnabled = !ScreenSharingWrapper.getInstance().isSessionRunning();
-        menuItem.setEnabled(buttonEnabled);
+    private void updateMenuItemState() {
+        if(m_menuItemHelp == null){
+            return;
+        }
+        boolean isSessionRunning = !ScreenSharingWrapper.getInstance().isSessionRunning();
+        m_menuItemHelp.setVisible(isSessionRunning);
+        m_menuItemShare.setVisible(!isSessionRunning);
     }
 
     private void handleOverlayPermission() {

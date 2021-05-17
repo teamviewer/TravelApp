@@ -74,4 +74,11 @@
     <string name="pref_title_ticket">Ticket</string>
     <string name="pref_title_credit_card">Credit Card</string>
     <string name="pref_title_digital_camera">Digital camera</string>
+    <string name="share">Share</string>
+    <string name="choose_file_title">Choose file for transfer</string>
+
+    <string-array name="share_from">
+        <item>Take picture</item>
+        <item>Choose from library</item>
+    </string-array>
 </resources>
