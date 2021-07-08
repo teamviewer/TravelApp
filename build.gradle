@@ -5,7 +5,7 @@ buildscript {
         
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.1'
+        classpath 'com.android.tools.build:gradle:4.2.2'
     }
 }
 
@@ -13,18 +13,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-    }
-}
-
-subprojects {
-    project.plugins.whenPluginAdded { plugin ->
-        if ("com.android.build.gradle.AppPlugin".equals(plugin.class.name) ||
-                "com.android.build.gradle.LibraryPlugin".equals(plugin.class.name)) {
-            project.android.compileOptions {
-                sourceCompatibility JavaVersion.VERSION_1_8
-                targetCompatibility JavaVersion.VERSION_1_8
-            }
-        }
     }
 }
 
