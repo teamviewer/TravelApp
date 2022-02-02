@@ -18,11 +18,11 @@ import androidx.annotation.NonNull;
 import com.teamviewer.example.travel.callbacks.AccessControlCallbackImpl;
 import com.teamviewer.example.travel.callbacks.AuthenticationCallbackImpl;
 import com.teamviewer.example.travel.callbacks.InputCallbackImpl;
-import com.teamviewer.sdk.pilotsessionui.PilotSessionUI;
+import com.teamviewer.sdk.assistarsessionui.AssistARSessionUI;
 import com.teamviewer.sdk.screensharing.AccessControlRule;
 import com.teamviewer.sdk.screensharing.AccessType;
+import com.teamviewer.sdk.screensharing.AssistARSession;
 import com.teamviewer.sdk.screensharing.DefaultLogger;
-import com.teamviewer.sdk.screensharing.PilotSession;
 import com.teamviewer.sdk.screensharing.ScreenSharingSession;
 import com.teamviewer.sdk.screensharing.SessionCallback;
 import com.teamviewer.sdk.screensharing.Settings;
@@ -126,10 +126,10 @@ public final class ScreenSharingWrapper {
         mCurrentSession = teamViewerSession;
         RunningStateListener.SessionState sessionState = RunningStateListener.SessionState.ScreenSharing;
 
-        if (teamViewerSession instanceof PilotSession) {
+        if (teamViewerSession instanceof AssistARSession) {
             sessionState = RunningStateListener.SessionState.Pilot;
-            PilotSessionUI.INSTANCE.setCurrentSession((PilotSession) teamViewerSession);
-            context.startActivity(PilotSessionUI.INSTANCE.createIntentForPilotSessionActivity(context));
+            AssistARSessionUI.INSTANCE.setCurrentSession((AssistARSession) teamViewerSession);
+            context.startActivity(AssistARSessionUI.INSTANCE.createIntentForAssistARSessionActivity(context, "Shared Files"));
         }
 
         if (mRunningStateListener != null) {
@@ -139,7 +139,7 @@ public final class ScreenSharingWrapper {
 
     private void sessionEnded() {
         mCurrentSession = null;
-        PilotSessionUI.INSTANCE.setCurrentSession(null);
+        AssistARSessionUI.INSTANCE.setCurrentSession(null);
 
         if (mRunningStateListener != null) {
             mRunningStateListener.onRunningStateChange(RunningStateListener.SessionState.NoSession);

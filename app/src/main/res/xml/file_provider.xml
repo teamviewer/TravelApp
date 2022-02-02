@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <paths>
     <external-path name="export-files" path="/" />
+
+    <external-files-path
+        name="shared_files"
+        path="Shared Files" />
 </paths>
