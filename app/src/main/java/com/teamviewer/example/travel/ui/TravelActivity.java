@@ -95,17 +95,16 @@ public class TravelActivity extends AppCompatActivity implements ScreenSharingWr
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.help:
-                m_sessionCodeDialog = new SessionCodeInputDialog(this).getInstance();
-                m_sessionCodeDialog.show();
-                return true;
-            case R.id.share:
-                showChooseFileDialog();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == R.id.help) {
+            m_sessionCodeDialog = new SessionCodeInputDialog(this).getInstance();
+            m_sessionCodeDialog.show();
+            return true;
+        } else if (item.getItemId() == R.id.share) {
+            showChooseFileDialog();
+            return true;
         }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void showChooseFileDialog() {
