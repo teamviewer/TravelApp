@@ -37,6 +37,6 @@
             android:cursorVisible="true"
             android:ems="10"
             android:inputType="number"
-            android:maxLength="8" />
+            android:maxLength="9" />
     </LinearLayout>
 </LinearLayout>
