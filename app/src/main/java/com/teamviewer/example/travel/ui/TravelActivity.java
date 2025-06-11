@@ -45,6 +45,7 @@ public class TravelActivity extends AppCompatActivity implements ScreenSharingWr
     private static final String TAG = "TravelActivity";
     private static final int REQUEST_CODE_RECORD_AUDIO_PERMISSIONS = 1;
     private static final int REQUEST_CODE_CAMERA_PERMISSIONS = 2;
+    private static final int REQUEST_CODE_NOTIFICATION_PERMISSION = 3;
 
     private static final int REQUEST_CODE_PICK_FILE = 201;
     private static final int REQUEST_CODE_TAKE_PICTURE = 202;
@@ -224,6 +225,11 @@ public class TravelActivity extends AppCompatActivity implements ScreenSharingWr
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
                 ContextCompat.checkSelfPermission(TravelActivity.this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO}, REQUEST_CODE_RECORD_AUDIO_PERMISSIONS);
+        }
+        if (sessionState == SessionState.Pilot &&
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
+                ContextCompat.checkSelfPermission(TravelActivity.this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS}, REQUEST_CODE_NOTIFICATION_PERMISSION);
         }
     }
 
