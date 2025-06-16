@@ -92,6 +92,7 @@ public final class ScreenSharingWrapper {
                 .withSettings(createSettings())
                 .withAccessControlCallback(new AccessControlCallbackImpl(context))
                 .withInputCallback(inputCallback)
+                .withStorageFolder("Shared Files")
                 .build();
         m_teamViewerSdk.connectToSessionCode(sessionCode);
     }
@@ -129,7 +130,10 @@ public final class ScreenSharingWrapper {
         if (teamViewerSession instanceof AssistARSession) {
             sessionState = RunningStateListener.SessionState.Pilot;
             AssistARSessionUI.INSTANCE.setCurrentSession((AssistARSession) teamViewerSession);
-            context.startActivity(AssistARSessionUI.INSTANCE.createIntentForAssistARSessionActivity(context, "Shared Files"));
+            context.startActivity(AssistARSessionUI.INSTANCE.createIntentForAssistARSessionActivity(
+                    context,
+                    Constants.NOTIFICATION_ID,
+                    Constants.NOTIFICATION_CHANNEL_ID));
         }
 
         if (mRunningStateListener != null) {
