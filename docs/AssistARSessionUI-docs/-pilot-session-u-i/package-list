@@ -1,0 +1,19 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.teamviewer.sdk.assistarsessionui////PointingToDeclaration/-pilot-session-u-i/com.teamviewer.sdk.assistarsessionui/index.html
+$dokka.location:com.teamviewer.sdk.assistarsessionui/ARCoreSupport.SUPPORTED///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-pilot-session-u-i/com.teamviewer.sdk.assistarsessionui/-a-r-core-support/-s-u-p-p-o-r-t-e-d/index.html
+$dokka.location:com.teamviewer.sdk.assistarsessionui/ARCoreSupport.TRANSIENT///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-pilot-session-u-i/com.teamviewer.sdk.assistarsessionui/-a-r-core-support/-t-r-a-n-s-i-e-n-t/index.html
+$dokka.location:com.teamviewer.sdk.assistarsessionui/ARCoreSupport.UNSUPPORTED///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-pilot-session-u-i/com.teamviewer.sdk.assistarsessionui/-a-r-core-support/-u-n-s-u-p-p-o-r-t-e-d/index.html
+$dokka.location:com.teamviewer.sdk.assistarsessionui/ARCoreSupport///PointingToDeclaration/-pilot-session-u-i/com.teamviewer.sdk.assistarsessionui/-a-r-core-support/index.html
+$dokka.location:com.teamviewer.sdk.assistarsessionui/ARCoreSupport/entries/#/PointingToDeclaration/-pilot-session-u-i/com.teamviewer.sdk.assistarsessionui/-a-r-core-support/entries.html
+$dokka.location:com.teamviewer.sdk.assistarsessionui/ARCoreSupport/valueOf/#kotlin.String/PointingToDeclaration/-pilot-session-u-i/com.teamviewer.sdk.assistarsessionui/-a-r-core-support/value-of.html
+$dokka.location:com.teamviewer.sdk.assistarsessionui/ARCoreSupport/values/#/PointingToDeclaration/-pilot-session-u-i/com.teamviewer.sdk.assistarsessionui/-a-r-core-support/values.html
+$dokka.location:com.teamviewer.sdk.assistarsessionui/AssistARSessionUI.AssistARSessionIsNullException///PointingToDeclaration/-pilot-session-u-i/com.teamviewer.sdk.assistarsessionui/-assist-a-r-session-u-i/-assist-a-r-session-is-null-exception/index.html
+$dokka.location:com.teamviewer.sdk.assistarsessionui/AssistARSessionUI.AssistARSessionIsNullException/AssistARSessionIsNullException/#kotlin.String/PointingToDeclaration/-pilot-session-u-i/com.teamviewer.sdk.assistarsessionui/-assist-a-r-session-u-i/-assist-a-r-session-is-null-exception/-assist-a-r-session-is-null-exception.html
+$dokka.location:com.teamviewer.sdk.assistarsessionui/AssistARSessionUI///PointingToDeclaration/-pilot-session-u-i/com.teamviewer.sdk.assistarsessionui/-assist-a-r-session-u-i/index.html
+$dokka.location:com.teamviewer.sdk.assistarsessionui/AssistARSessionUI/createIntentForAssistARSessionActivity/#android.content.Context#kotlin.Int#kotlin.String/PointingToDeclaration/-pilot-session-u-i/com.teamviewer.sdk.assistarsessionui/-assist-a-r-session-u-i/create-intent-for-assist-a-r-session-activity.html
+$dokka.location:com.teamviewer.sdk.assistarsessionui/AssistARSessionUI/currentSession/#/PointingToDeclaration/-pilot-session-u-i/com.teamviewer.sdk.assistarsessionui/-assist-a-r-session-u-i/current-session.html
+$dokka.location:com.teamviewer.sdk.assistarsessionui/AssistARSessionUI/isARCoreInstalled/#android.content.Context/PointingToDeclaration/-pilot-session-u-i/com.teamviewer.sdk.assistarsessionui/-assist-a-r-session-u-i/is-a-r-core-installed.html
+$dokka.location:com.teamviewer.sdk.assistarsessionui/AssistARSessionUI/isARCoreSupported/#android.content.Context/PointingToDeclaration/-pilot-session-u-i/com.teamviewer.sdk.assistarsessionui/-assist-a-r-session-u-i/is-a-r-core-supported.html
+$dokka.location:com.teamviewer.sdk.assistarsessionui/AssistARSessionUI/requestInstallationOfArCore/#android.app.Activity/PointingToDeclaration/-pilot-session-u-i/com.teamviewer.sdk.assistarsessionui/-assist-a-r-session-u-i/request-installation-of-ar-core.html
+com.teamviewer.sdk.assistarsessionui

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>TeamViewer Mobile SDKs – Documentation (Start Page)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Start page for TeamViewer Mobile SDK documentation: ScreenSharing SDK and Assist AR integration." />
+    <style>
+      :root {
+        --bg: #0b0f14;
+        --panel: #111723;
+        --panel-2: #0e1420;
+        --text: #e6eef7;
+        --muted: #afc3da;
+        --link: #6fb1ff;
+        --accent: #5dd0b5;
+        --border: #1e2a3b;
+        --code-bg: #0c1220;
+        --kbd-bg: #101826;
+        --shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+        --radius: 14px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        line-height: 1.3;
+      }
+
+      a {
+        color: var(--link);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      header {
+        padding: 56px 24px 32px;
+        background: radial-gradient(
+            1200px 600px at 10% 0%,
+            #142035 0%,
+            transparent 60%
+          ),
+          radial-gradient(1000px 500px at 90% 0%, #0d2b2b 0%, transparent 60%),
+          linear-gradient(180deg, var(--panel), var(--panel-2));
+        border-bottom: 1px solid var(--border);
+      }
+      .container {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+      .hero h1 {
+        margin: 0 0 8px;
+        font-size: 34px;
+        letter-spacing: 0.2px;
+      }
+      .hero p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 18px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 16px;
+        margin-top: 32px;
+      }
+      .card {
+        grid-column: span 12;
+        background: linear-gradient(180deg, #0f1624, #0b1220);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow: var(--shadow);
+      }
+      @media (min-width: 760px) {
+        .card {
+          grid-column: span 6;
+        }
+      }
+      .card h2 {
+        margin: 0 0 8px;
+        font-size: 22px;
+      }
+      .card p {
+        margin: 0 0 16px;
+        color: var(--muted);
+      }
+      .card .cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(135deg, var(--accent), #56a7ff);
+        color: #00121a;
+        font-weight: 600;
+        padding: 10px 14px;
+        border-radius: 10px;
+        box-shadow: 0 6px 16px rgba(93, 208, 181, 0.35);
+        text-decoration: none;
+      }
+      .card .cta:hover {
+        filter: brightness(1.05);
+        text-decoration: none;
+      }
+
+      .section {
+        margin: 40px 0;
+        padding: 24px;
+        background: linear-gradient(180deg, #0c1422, #0a111e);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+      .section h2 {
+        margin-top: 0;
+      }
+
+      h3 {
+        margin-top: 24px;
+      }
+      ul {
+        padding-left: 20px;
+      }
+      li + li {
+        margin-top: 6px;
+      }
+      code,
+      kbd {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+      }
+      code {
+        background: var(--kbd-bg);
+        color: #e5f0ff;
+        padding: 2px 6px;
+        border-radius: 6px;
+        border: 1px solid var(--border);
+      }
+
+      pre {
+        margin: 24px 0;
+        padding: 16px 18px;
+        background: var(--code-bg);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: auto;
+        line-height: 1.5;
+      }
+
+      pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+        color: #d8e7ff;
+      }
+      .subtle {
+        color: var(--muted);
+      }
+
+      .note {
+        margin: 16px 0;
+        padding: 12px 14px;
+        border-left: 4px solid var(--accent);
+        background: rgba(93, 208, 181, 0.06);
+        border-radius: 10px;
+      }
+
+      footer {
+        margin: 48px 0 24px;
+        color: var(--muted);
+        font-size: 13px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container hero">
+        <h1
+          style="
+            margin: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5ch;
+          ">
+          <img
+            src="img/TeamViewer_Logo.png"
+            alt="TeamViewer"
+            style="height: 1em; width: auto" />
+          TeamViewer Mobile SDKs – Documentation
+        </h1>
+        <p>
+          Start here to integrate Screen Sharing or Assist AR remote support
+          into your Android app.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Overview -->
+      <section class="section" aria-labelledby="overview-title">
+        <h2 id="overview-title">Overview</h2>
+        <p class="subtle">
+          There are two SDKs you can integrate depending on your use case:
+        </p>
+
+        <div class="grid">
+          <!-- ScreenSharing SDK Card -->
+          <article class="card">
+            <h2>ScreenSharing SDK</h2>
+            <p>
+              Share the content of your own app securely with a remote expert.
+              Ideal for enabling remote guidance and support directly within
+              your application.
+            </p>
+            <a
+              class="cta"
+              href="ScreenSharingSdk-docs/index.html"
+              aria-label="Open ScreenSharing SDK documentation">
+              Open ScreenSharing SDK Docs →
+            </a>
+          </article>
+
+          <!-- Assist AR SDK Card -->
+          <article class="card">
+            <h2>Assist AR SDK</h2>
+            <p>
+              Integrate TeamViewer Assist AR into your app to provide AR remote
+              support experiences. <strong>Note:</strong> This module depends on
+              the TeamViewer ScreenSharing SDK.
+            </p>
+            <a
+              class="cta"
+              href="AssistARSessionUI-docs/index.html"
+              aria-label="Open Assist AR documentation">
+              Open Assist AR Docs →
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="sdk-docs-title">
+        <h2 id="sdk-docs-title">How to use the SDKs?</h2>
+
+        <article aria-labelledby="requirements-title">
+          <h3 id="requirements-title">Requirements</h3>
+          <ul>
+            <li>minSdkVersion <code>26</code> or newer</li>
+            <li>Kotlin <code>2.2.0</code> or newer</li>
+            <li>JDK <code>21</code> or newer</li>
+          </ul>
+        </article>
+
+        <article aria-labelledby="usage-title">
+          <h3 id="usage-title">Usage</h3>
+          <ul>
+            <li>Apply Kotlin Plugin version <code>2.2.0</code> or newer</li>
+            <li>
+              Add the TeamViewer SDK repository to your repositories in
+              <code>settings.gradle.kts</code>:
+              <pre><code class="language-gradle">dependencyResolutionManagement {
+    repositories {
+        maven {
+            url = uri("https://pkgs.dev.azure.com/TeamViewerMobileSDK/android/_packaging/android%40Release/maven/v1")
+            name = "teamviewerSdkCredentials"
+            credentials(PasswordCredentials::class)
+            authentication.create&lt;BasicAuthentication&gt;("basic")
+        }
+    }
+}</code></pre>
+            </li>
+            <li>
+              Add or edit the <code>gradle.properties</code> file in
+              <code>${user.home}/.gradle</code> or the project directory.
+              Generate a
+              <a
+                href="https://dev.azure.com/TeamViewerMobileSDK/_details/security/tokens"
+                >Personal Access Token</a
+              >
+              with Packaging read scopes and paste it into the
+              <code>PERSONAL_ACCESS_TOKEN</code> placeholder.
+              <pre><code class="language-gradle">teamviewerSdkCredentialsUsername=TeamViewerMobileSDK
+teamviewerSdkCredentialsPassword=PERSONAL_ACCESS_TOKEN</code></pre>
+            </li>
+          </ul>
+        </article>
+
+        <article aria-labelledby="sample-title">
+          <h3 id="sample-title">Sample</h3>
+          <p>
+            You can find a sample of how to integrate the SDKs on GitHub:
+            <a href="https://github.com/teamviewer/TravelApp"
+              >https://github.com/teamviewer/TravelApp</a
+            >
+          </p>
+        </article>
+
+        <article aria-labelledby="screensharing-title">
+          <h2 id="screensharing-title">Screen Sharing SDK</h2>
+          <p>Add the following to your <code>build.gradle.kts</code>:</p>
+          <pre><code class="language-gradle">dependencies {
+    implementation("com.teamviewer.sdk:screensharing:&lt;VERSION&gt;")
+}</code></pre>
+          <p>
+            See
+            <a
+              href="https://github.com/teamviewer/TravelApp/blob/master/app/src/main/java/com/teamviewer/example/travel/ScreenSharingWrapper.java"
+              >ScreenSharingWrapper</a
+            >
+            in the sample app for next steps on how to configure the SDK and
+            establish a TeamViewer session through the SDK.
+          </p>
+        </article>
+
+        <article aria-labelledby="assistar-title">
+          <h2 id="assistar-title">Assist AR SDK</h2>
+          <p>The Assist AR SDK depends on the TeamViewer ScreenSharing SDK.</p>
+          <p>Add the following to your <code>build.gradle.kts</code>:</p>
+          <pre><code class="language-gradle">dependencies {
+    implementation("com.teamviewer.sdk:assistar:&lt;VERSION&gt;")
+}</code></pre>
+          <p>
+            See
+            <a
+              href="https://github.com/teamviewer/TravelApp/blob/master/app/src/main/java/com/teamviewer/example/travel/ScreenSharingWrapper.java"
+              >ScreenSharingWrapper</a
+            >
+            in the sample app for next steps on how to configure the SDK and
+            establish a TeamViewer session through the SDK.
+          </p>
+        </article>
+
+        <article aria-labelledby="permissions-title">
+          <h3 id="permissions-title">Permissions</h3>
+          <p>The following permissions will be automatically added:</p>
+          <ul>
+            <li><code>android.permission.RECORD_AUDIO</code></li>
+            <li><code>android.permission.CAMERA</code></li>
+            <li>
+              <code>android.permission.WRITE_EXTERNAL_STORAGE</code> for Android
+              Sdk 28 and below when file is received from expert/supporter side
+            </li>
+          </ul>
+        </article>
+
+        <article aria-labelledby="notification-title">
+          <h3 id="notification-title">Notification</h3>
+          <ul>
+            <li>
+              <code
+                >&lt;uses-permission
+                android:name="android.permission.POST_NOTIFICATIONS" /&gt;</code
+              >
+              needs to be added to your AndroidManifest.xml<br />
+              It is required to show an ongoing session notification during a
+              call to keep the VoIP connection alive, even if the user puts your
+              app in the background.
+            </li>
+            <li>
+              Create a NotificationChannel in your app or reuse an existing one.
+              The channel doesn't need a high priority or any ringing or
+              vibration.<br />
+              It is designed to be a silent notification.
+            </li>
+            <li>
+              You don't need the <code>POST_NOTIFICATIONS</code> permission if
+              you don't want to show the notification at all on Android devices
+              greater than Android 13.
+            </li>
+          </ul>
+          <pre><code class="language-kotlin">import androidx.core.app.NotificationChannelCompat
+import androidx.core.app.NotificationManagerCompat
+      
+val notificationChannel = NotificationChannelCompat.Builder("&lt;Channel_ID&gt;", NotificationManagerCompat.IMPORTANCE_LOW)
+    .setName("&lt;Channel_Title&gt;")
+    .setDescription("&lt;Description&gt;")
+    .build()
+NotificationManagerCompat.from(this).createNotificationChannel(notificationChannel)</code></pre>
+        </article>
+      </section>
+
+      <footer>© TeamViewer – Android SDK Documentation</footer>
+    </main>
+  </body>
+</html>
