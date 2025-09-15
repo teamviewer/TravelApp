@@ -24,7 +24,7 @@ public class InputCallbackImpl implements InputCallback {
 
     public InputCallbackImpl(Context context) {
         m_context = context;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && android.provider.Settings.canDrawOverlays(m_context)) {
+        if (android.provider.Settings.canDrawOverlays(m_context)) {
             m_applicationOverlayAllowed = true;
         } else {
             m_applicationOverlayAllowed = false;

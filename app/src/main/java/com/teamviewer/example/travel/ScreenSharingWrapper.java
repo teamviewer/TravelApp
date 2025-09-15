@@ -128,7 +128,7 @@ public final class ScreenSharingWrapper {
         RunningStateListener.SessionState sessionState = RunningStateListener.SessionState.ScreenSharing;
 
         if (teamViewerSession instanceof AssistARSession) {
-            sessionState = RunningStateListener.SessionState.Pilot;
+            sessionState = RunningStateListener.SessionState.AssistAR;
             AssistARSessionUI.INSTANCE.setCurrentSession((AssistARSession) teamViewerSession);
             context.startActivity(AssistARSessionUI.INSTANCE.createIntentForAssistARSessionActivity(
                     context,
@@ -174,9 +174,9 @@ public final class ScreenSharingWrapper {
             ScreenSharing,
 
             /**
-             * A Pilot session is currently running.
+             * An Assist AR session is currently running.
              */
-            Pilot
+            AssistAR
         }
 
         /**

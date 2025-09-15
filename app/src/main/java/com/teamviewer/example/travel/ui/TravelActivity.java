@@ -220,13 +220,12 @@ public class TravelActivity extends AppCompatActivity implements ScreenSharingWr
         invalidateOptionsMenu();
         updateSnackbar(sessionState != SessionState.NoSession);
 
-        //Request record audio permission if needed
+        //Request record audio permission
         if (sessionState == SessionState.ScreenSharing &&
-                Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
                 ContextCompat.checkSelfPermission(TravelActivity.this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO}, REQUEST_CODE_RECORD_AUDIO_PERMISSIONS);
         }
-        if (sessionState == SessionState.Pilot &&
+        if (sessionState == SessionState.AssistAR &&
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
                 ContextCompat.checkSelfPermission(TravelActivity.this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS}, REQUEST_CODE_NOTIFICATION_PERMISSION);
@@ -276,7 +275,7 @@ public class TravelActivity extends AppCompatActivity implements ScreenSharingWr
     }
 
     private void handleOverlayPermission() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(this)) {
+        if (!Settings.canDrawOverlays(this)) {
             showOverlayPermissionDialog();
         }
     }
@@ -294,14 +293,12 @@ public class TravelActivity extends AppCompatActivity implements ScreenSharingWr
     }
 
     private void openSettingsIntent() {
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
-            Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                    Uri.parse("package:" + getPackageName()));
-            if (intent.resolveActivity(getPackageManager()) != null) {
-                startActivity(intent);
-            } else {
-                Log.e(TAG, "Failed to display overlay permission screen");
-            }
+        Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                Uri.parse("package:" + getPackageName()));
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            Log.e(TAG, "Failed to display overlay permission screen");
         }
     }
 }

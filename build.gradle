@@ -2,7 +2,6 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-        
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.10.1'
@@ -13,5 +12,13 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven {
+            url = "https://pkgs.dev.azure.com/TeamViewerMobileSDK/android/_packaging/android%40Release/maven/v1"
+            name = "teamviewerSdkCredentials"
+            credentials(PasswordCredentials)
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
     }
 }
