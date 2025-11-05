@@ -1,0 +1,7 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+module:Assist AR SDK
+com.teamviewer.sdk.assistarsessionui
+module:ScreenSharing SDK
+com.teamviewer.sdk.screensharing
