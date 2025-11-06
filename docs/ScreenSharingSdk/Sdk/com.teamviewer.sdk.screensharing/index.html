@@ -1,0 +1,453 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>com.teamviewer.sdk.screensharing</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
+<body>
+    <div class="root">
+    <nav class="navigation theme-dark" id="navigation-wrapper">
+<a class="library-name--link" href="../../../index.html">
+                    TeamViewer Mobile SDK
+            </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">15.71.518
+        </div>
+        <div class="navigation-controls">
+        <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":ScreenSharingSdk:Sdk/release">androidJvm</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
+                    <div class="dropdown--header"><span>Platform filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":ScreenSharingSdk:Sdk/release" data-filter=":ScreenSharingSdk:Sdk/release">
+                                <span class="checkbox--icon"></span>
+                                androidJvm
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </div>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button" type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list" data-role="dropdown-listbox">
+                        <div class="dropdown--header">
+                            <span>
+                                    TeamViewer Mobile SDK
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner" id="sideMenu"></div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="package" id="content" pageids="ScreenSharing SDK::com.teamviewer.sdk.screensharing////PointingToDeclaration//-1002207787">
+  <div class="breadcrumbs"><a href="../index.html">ScreenSharing SDK</a><span class="delimiter">/</span><span class="current">com.teamviewer.sdk.screensharing</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
+    <div class="platform-hinted UnderCoverText" data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ScreenSharingSdk:Sdk/release"><p class="paragraph">Contains interfaces and classes for interacting with the TeamViewer Sdk.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="105210360%2FClasslikes%2F-1002207787" anchor-label="AccessControlCallback" id="105210360%2FClasslikes%2F-1002207787" data-filterable-set=":ScreenSharingSdk:Sdk/release"></a>
+          <div class="table-row" data-filterable-current=":ScreenSharingSdk:Sdk/release" data-filterable-set=":ScreenSharingSdk:Sdk/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-access-control-callback/index.html"><span>Access</span><wbr><span>Control</span><wbr><span><span>Callback</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="105210360%2FClasslikes%2F-1002207787"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ScreenSharingSdk:Sdk/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-access-control-callback/index.html">AccessControlCallback</a></div><div class="brief "><p class="paragraph">Callback for authentication of access control requests from the remote supporter.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1810738125%2FClasslikes%2F-1002207787" anchor-label="AccessControlData" id="-1810738125%2FClasslikes%2F-1002207787" data-filterable-set=":ScreenSharingSdk:Sdk/release"></a>
+          <div class="table-row" data-filterable-current=":ScreenSharingSdk:Sdk/release" data-filterable-set=":ScreenSharingSdk:Sdk/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-access-control-data/index.html"><span>Access</span><wbr><span>Control</span><wbr><span><span>Data</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1810738125%2FClasslikes%2F-1002207787"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ScreenSharingSdk:Sdk/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-access-control-data/index.html">AccessControlData</a></div><div class="brief "><p class="paragraph">This interface provides the <a href="-access-control-result/index.html">callback</a> and more information about the <a href="-access-control-callback/on-access-control-request.html">AccessControl</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2099898400%2FClasslikes%2F-1002207787" anchor-label="AccessControlResult" id="2099898400%2FClasslikes%2F-1002207787" data-filterable-set=":ScreenSharingSdk:Sdk/release"></a>
+          <div class="table-row" data-filterable-current=":ScreenSharingSdk:Sdk/release" data-filterable-set=":ScreenSharingSdk:Sdk/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-access-control-result/index.html"><span>Access</span><wbr><span>Control</span><wbr><span><span>Result</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2099898400%2FClasslikes%2F-1002207787"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ScreenSharingSdk:Sdk/release"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token keyword">interface </span><a href="-access-control-result/index.html">AccessControlResult</a></div><div class="brief "><p class="paragraph">Callback to provide the result of the <a href="-access-control-callback/on-access-control-request.html">AccessControl</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-475910879%2FClasslikes%2F-1002207787" anchor-label="AccessControlRule" id="-475910879%2FClasslikes%2F-1002207787" data-filterable-set=":ScreenSharingSdk:Sdk/release"></a>
+          <div class="table-row" data-filterable-current=":ScreenSharingSdk:Sdk/release" data-filterable-set=":ScreenSharingSdk:Sdk/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-access-control-rule/index.html"><span>Access</span><wbr><span>Control</span><wbr><span><span>Rule</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-475910879%2FClasslikes%2F-1002207787"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ScreenSharingSdk:Sdk/release"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-access-control-rule/index.html">AccessControlRule</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-access-control-rule/index.html">AccessControlRule</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Rules for access control.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1492338062%2FClasslikes%2F-1002207787" anchor-label="AccessType" id="1492338062%2FClasslikes%2F-1002207787" data-filterable-set=":ScreenSharingSdk:Sdk/release"></a>
+          <div class="table-row" data-filterable-current=":ScreenSharingSdk:Sdk/release" data-filterable-set=":ScreenSharingSdk:Sdk/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-access-type/index.html"><span>Access</span><wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1492338062%2FClasslikes%2F-1002207787"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ScreenSharingSdk:Sdk/release"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-access-type/index.html">AccessType</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-access-type/index.html">AccessType</a><span class="token operator">&gt; </span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="613094746%2FClasslikes%2F-1002207787" anchor-label="AssistARSession" id="613094746%2FClasslikes%2F-1002207787" data-filterable-set=":ScreenSharingSdk:Sdk/release"></a>
+          <div class="table-row" data-filterable-current=":ScreenSharingSdk:Sdk/release" data-filterable-set=":ScreenSharingSdk:Sdk/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-assist-a-r-session/index.html"><span>Assist</span><wbr><span><span>ARSession</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="613094746%2FClasslikes%2F-1002207787"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ScreenSharingSdk:Sdk/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-assist-a-r-session/index.html">AssistARSession</a> : <a href="-team-viewer-session/index.html">TeamViewerSession</a></div><div class="brief "><p class="paragraph">This interface represents a running AssistAR session.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1830329807%2FClasslikes%2F-1002207787" anchor-label="AuthenticationCallback" id="1830329807%2FClasslikes%2F-1002207787" data-filterable-set=":ScreenSharingSdk:Sdk/release"></a>
+          <div class="table-row" data-filterable-current=":ScreenSharingSdk:Sdk/release" data-filterable-set=":ScreenSharingSdk:Sdk/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-authentication-callback/index.html"><span>Authentication</span><wbr><span><span>Callback</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1830329807%2FClasslikes%2F-1002207787"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ScreenSharingSdk:Sdk/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-authentication-callback/index.html">AuthenticationCallback</a></div><div class="brief "><p class="paragraph">Callback for authentication of incoming connections to the TeamViewer Sdk.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1298984054%2FClasslikes%2F-1002207787" anchor-label="AuthenticationData" id="-1298984054%2FClasslikes%2F-1002207787" data-filterable-set=":ScreenSharingSdk:Sdk/release"></a>
+          <div class="table-row" data-filterable-current=":ScreenSharingSdk:Sdk/release" data-filterable-set=":ScreenSharingSdk:Sdk/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-authentication-data/index.html"><span>Authentication</span><wbr><span><span>Data</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1298984054%2FClasslikes%2F-1002207787"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ScreenSharingSdk:Sdk/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-authentication-data/index.html">AuthenticationData</a></div><div class="brief "><p class="paragraph">This interface provides the <a href="-authentication-result/index.html">callback </a> and more information about the <a href="-authentication-callback/on-authentication.html">authentication</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-25678409%2FClasslikes%2F-1002207787" anchor-label="AuthenticationResult" id="-25678409%2FClasslikes%2F-1002207787" data-filterable-set=":ScreenSharingSdk:Sdk/release"></a>
+          <div class="table-row" data-filterable-current=":ScreenSharingSdk:Sdk/release" data-filterable-set=":ScreenSharingSdk:Sdk/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-authentication-result/index.html"><span>Authentication</span><wbr><span><span>Result</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-25678409%2FClasslikes%2F-1002207787"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ScreenSharingSdk:Sdk/release"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token keyword">interface </span><a href="-authentication-result/index.html">AuthenticationResult</a></div><div class="brief "><p class="paragraph">Callback to provide the result of the <a href="-authentication-callback/on-authentication.html">authentication</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-812034587%2FClasslikes%2F-1002207787" anchor-label="DefaultLogger" id="-812034587%2FClasslikes%2F-1002207787" data-filterable-set=":ScreenSharingSdk:Sdk/release"></a>
+          <div class="table-row" data-filterable-current=":ScreenSharingSdk:Sdk/release" data-filterable-set=":ScreenSharingSdk:Sdk/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-default-logger/index.html"><span>Default</span><wbr><span><span>Logger</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-812034587%2FClasslikes%2F-1002207787"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ScreenSharingSdk:Sdk/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-default-logger/index.html">DefaultLogger</a> : <a href="-logger/index.html">Logger</a></div><div class="brief "><p class="paragraph">Default implementation of <a href="-logger/index.html">Logger</a> which delegates all logging to Android's default log output.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-255089111%2FClasslikes%2F-1002207787" anchor-label="ErrorCallback" id="-255089111%2FClasslikes%2F-1002207787" data-filterable-set=":ScreenSharingSdk:Sdk/release"></a>
+          <div class="table-row" data-filterable-current=":ScreenSharingSdk:Sdk/release" data-filterable-set=":ScreenSharingSdk:Sdk/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-error-callback/index.html"><span>Error</span><wbr><span><span>Callback</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-255089111%2FClasslikes%2F-1002207787"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ScreenSharingSdk:Sdk/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-error-callback/index.html">ErrorCallback</a></div><div class="brief "><p class="paragraph">Callback for errors from the TeamViewer Sdk.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1943519966%2FClasslikes%2F-1002207787" anchor-label="FileBoxCallback" id="-1943519966%2FClasslikes%2F-1002207787" data-filterable-set=":ScreenSharingSdk:Sdk/release"></a>
+          <div class="table-row" data-filterable-current=":ScreenSharingSdk:Sdk/release" data-filterable-set=":ScreenSharingSdk:Sdk/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-file-box-callback/index.html"><span>File</span><wbr><span>Box</span><wbr><span><span>Callback</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1943519966%2FClasslikes%2F-1002207787"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ScreenSharingSdk:Sdk/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-file-box-callback/index.html">FileBoxCallback</a></div><div class="brief "><p class="paragraph">Callback for file box changes in a Teamviewer session.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1101545748%2FClasslikes%2F-1002207787" anchor-label="FileBoxItem" id="1101545748%2FClasslikes%2F-1002207787" data-filterable-set=":ScreenSharingSdk:Sdk/release"></a>
+          <div class="table-row" data-filterable-current=":ScreenSharingSdk:Sdk/release" data-filterable-set=":ScreenSharingSdk:Sdk/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-file-box-item/index.html"><span>File</span><wbr><span>Box</span><wbr><span><span>Item</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1101545748%2FClasslikes%2F-1002207787"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ScreenSharingSdk:Sdk/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-file-box-item/index.html">FileBoxItem</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="575430823%2FClasslikes%2F-1002207787" anchor-label="InputCallback" id="575430823%2FClasslikes%2F-1002207787" data-filterable-set=":ScreenSharingSdk:Sdk/release"></a>
+          <div class="table-row" data-filterable-current=":ScreenSharingSdk:Sdk/release" data-filterable-set=":ScreenSharingSdk:Sdk/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-input-callback/index.html"><span>Input</span><wbr><span><span>Callback</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="575430823%2FClasslikes%2F-1002207787"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ScreenSharingSdk:Sdk/release"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token keyword">interface </span><a href="-input-callback/index.html">InputCallback</a></div><div class="brief "><p class="paragraph">Callback for input of the remote supporter.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="864685180%2FClasslikes%2F-1002207787" anchor-label="Logger" id="864685180%2FClasslikes%2F-1002207787" data-filterable-set=":ScreenSharingSdk:Sdk/release"></a>
+          <div class="table-row" data-filterable-current=":ScreenSharingSdk:Sdk/release" data-filterable-set=":ScreenSharingSdk:Sdk/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-logger/index.html"><span><span>Logger</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="864685180%2FClasslikes%2F-1002207787"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ScreenSharingSdk:Sdk/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-logger/index.html">Logger</a></div><div class="brief "><p class="paragraph">Callback for log messages from the TeamViewer Sdk.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1351152566%2FClasslikes%2F-1002207787" anchor-label="MicrophoneStateCallback" id="-1351152566%2FClasslikes%2F-1002207787" data-filterable-set=":ScreenSharingSdk:Sdk/release"></a>
+          <div class="table-row" data-filterable-current=":ScreenSharingSdk:Sdk/release" data-filterable-set=":ScreenSharingSdk:Sdk/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-microphone-state-callback/index.html"><span>Microphone</span><wbr><span>State</span><wbr><span><span>Callback</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1351152566%2FClasslikes%2F-1002207787"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ScreenSharingSdk:Sdk/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-microphone-state-callback/index.html">MicrophoneStateCallback</a></div><div class="brief "><p class="paragraph">Callback for microphone state from the TeamViewer Sdk.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1057459507%2FClasslikes%2F-1002207787" anchor-label="OnlineStateCallback" id="1057459507%2FClasslikes%2F-1002207787" data-filterable-set=":ScreenSharingSdk:Sdk/release"></a>
+          <div class="table-row" data-filterable-current=":ScreenSharingSdk:Sdk/release" data-filterable-set=":ScreenSharingSdk:Sdk/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-online-state-callback/index.html"><span>Online</span><wbr><span>State</span><wbr><span><span>Callback</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1057459507%2FClasslikes%2F-1002207787"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ScreenSharingSdk:Sdk/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-online-state-callback/index.html">OnlineStateCallback</a></div><div class="brief "><p class="paragraph">Callback for online states of the TeamViewer Sdk.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-148524570%2FClasslikes%2F-1002207787" anchor-label="ScreenSharingSession" id="-148524570%2FClasslikes%2F-1002207787" data-filterable-set=":ScreenSharingSdk:Sdk/release"></a>
+          <div class="table-row" data-filterable-current=":ScreenSharingSdk:Sdk/release" data-filterable-set=":ScreenSharingSdk:Sdk/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-screen-sharing-session/index.html"><span>Screen</span><wbr><span>Sharing</span><wbr><span><span>Session</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-148524570%2FClasslikes%2F-1002207787"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ScreenSharingSdk:Sdk/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-screen-sharing-session/index.html">ScreenSharingSession</a> : <a href="-team-viewer-session/index.html">TeamViewerSession</a></div><div class="brief "><p class="paragraph">This interface represents a running Screen Sharing aka Remote Control session.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-478322149%2FClasslikes%2F-1002207787" anchor-label="SessionCallback" id="-478322149%2FClasslikes%2F-1002207787" data-filterable-set=":ScreenSharingSdk:Sdk/release"></a>
+          <div class="table-row" data-filterable-current=":ScreenSharingSdk:Sdk/release" data-filterable-set=":ScreenSharingSdk:Sdk/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-session-callback/index.html"><span>Session</span><wbr><span><span>Callback</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-478322149%2FClasslikes%2F-1002207787"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ScreenSharingSdk:Sdk/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-session-callback/index.html">SessionCallback</a></div><div class="brief "><p class="paragraph">Callback for TeamViewer Sdk session events.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1212790409%2FClasslikes%2F-1002207787" anchor-label="Settings" id="1212790409%2FClasslikes%2F-1002207787" data-filterable-set=":ScreenSharingSdk:Sdk/release"></a>
+          <div class="table-row" data-filterable-current=":ScreenSharingSdk:Sdk/release" data-filterable-set=":ScreenSharingSdk:Sdk/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-settings/index.html"><span><span>Settings</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1212790409%2FClasslikes%2F-1002207787"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ScreenSharingSdk:Sdk/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-settings/index.html">Settings</a></div><div class="brief "><p class="paragraph">Here you can define settings which changes the behaviour of the TeamViewer Sdk.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1028708501%2FClasslikes%2F-1002207787" anchor-label="TeamViewerSdk" id="-1028708501%2FClasslikes%2F-1002207787" data-filterable-set=":ScreenSharingSdk:Sdk/release"></a>
+          <div class="table-row" data-filterable-current=":ScreenSharingSdk:Sdk/release" data-filterable-set=":ScreenSharingSdk:Sdk/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-team-viewer-sdk/index.html"><span>Team</span><wbr><span>Viewer</span><wbr><span><span>Sdk</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1028708501%2FClasslikes%2F-1002207787"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ScreenSharingSdk:Sdk/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-team-viewer-sdk/index.html">TeamViewerSdk</a></div><div class="brief "><p class="paragraph">Welcome to the TeamViewer Screen sharing Sdk!</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1501939343%2FClasslikes%2F-1002207787" anchor-label="TeamViewerSession" id="1501939343%2FClasslikes%2F-1002207787" data-filterable-set=":ScreenSharingSdk:Sdk/release"></a>
+          <div class="table-row" data-filterable-current=":ScreenSharingSdk:Sdk/release" data-filterable-set=":ScreenSharingSdk:Sdk/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-team-viewer-session/index.html"><span>Team</span><wbr><span>Viewer</span><wbr><span><span>Session</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1501939343%2FClasslikes%2F-1002207787"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ScreenSharingSdk:Sdk/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-team-viewer-session/index.html">TeamViewerSession</a></div><div class="brief "><p class="paragraph">This interface represents a running TeamViewer session.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+        <span>© 2025 TeamViewer</span>
+        <span class="pull-right">
+            <span>Generated by </span>
+            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                <span>dokka</span>
+            </a>
+        </span>
+    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

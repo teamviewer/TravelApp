@@ -1,1 +1,0 @@
-sourceset_dependencies='{":ScreenSharingSdk:PilotSessionUI/debug":[],":ScreenSharingSdk:PilotSessionUI/main":[],":ScreenSharingSdk:PilotSessionUI/release":[]}'
